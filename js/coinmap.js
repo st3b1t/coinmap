@@ -29,6 +29,14 @@ function coinmap() {
 		maxZoom: 18
 	});
 
+	var tileGoogleRoadmap = new L.Google('ROADMAP');
+
+	var tileGoogleSatellite = new L.Google('SATELLITE');
+
+	var tileGoogleHybrid = new L.Google('HYBRID');
+
+	var tileGoogleTerrain = new L.Google('TERRAIN');
+
 	var coin_clusters = {};
 	var coins = get_coins();
 	for (var i = 0; i < coins.length; i++) {
@@ -55,6 +63,10 @@ function coinmap() {
 		"MapQuestOpenAerial": tileMapQuestAerial,
 		"Toner": tileToner,
 		"Watercolor": tileWatercolor,
+		"Google Roadmap": tileGoogleRoadmap,
+		"Google Satellite": tileGoogleSatellite,
+		"Google Hybrid": tileGoogleHybrid,
+		"Google Terrain": tileGoogleTerrain,
 	}, coin_clusters, {
 		collapsed: false
 	}).addTo(map);

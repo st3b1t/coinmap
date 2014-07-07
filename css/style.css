@@ -108,13 +108,13 @@ a {
 }
 
 .leaflet-almost-top {
-   position: absolute;
-   z-index: 1000;
-   pointer-events: none;
-   top:200px;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
 }
 
 #marker-list{
+  top:280px;
   width: 200px;
   max-height: 300px;
   overflow-y: auto;
@@ -126,10 +126,10 @@ a {
 }
 
 .on-map-top {
-    font-weight:bold;
+  font-weight:bold;
 }
 
 .placename{
-    border-bottom: 1px rgb(230,230,230) solid;
-    cursor:pointer;
+  border-bottom: 1px rgb(230,230,230) solid;
+  cursor:pointer;
 }
