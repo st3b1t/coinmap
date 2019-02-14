@@ -7,27 +7,27 @@ function coinmap() {
 		maxZoom: 18
 	});
 
-	var tileToner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
-		maxZoom: 18
-	});
+	// var tileToner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+	// 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
+	// 	maxZoom: 18
+	// });
+    //
+	// var tileWatercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+	// 	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
+	// 	maxZoom: 16
+	// });
 
-	var tileWatercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
-		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
-		maxZoom: 16
-	});
+	// var tileMapQuest = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
+	// 	subdomains: ['otile1','otile2','otile3','otile4'],
+	// 	attribution: 'Map tiles by <a href="http://open.mapquestapi.com/">MapQuest</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
+	// 	maxZoom: 18
+	// });
 
-	var tileMapQuest = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
-		subdomains: ['otile1','otile2','otile3','otile4'],
-		attribution: 'Map tiles by <a href="http://open.mapquestapi.com/">MapQuest</a>. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
-		maxZoom: 18
-	});
-
-	var tileMapQuestAerial = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png', {
-		subdomains: ['otile1','otile2','otile3','otile4'],
-		attribution: 'Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
-		maxZoom: 18
-	});
+	// var tileMapQuestAerial = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png', {
+	// 	subdomains: ['otile1','otile2','otile3','otile4'],
+	// 	attribution: 'Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency. Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
+	// 	maxZoom: 18
+	// });
 
 	var tileGoogleRoadmap = new L.Google('ROADMAP');
 
@@ -47,7 +47,8 @@ function coinmap() {
 	for (var i = 0; i < coins.length; i++) {
 		coinmap_populate_overpass(coin_clusters[coins[i]], coins[i]);
 	}
-	var map_layers = [tileMapQuest];
+	// var map_layers = [tileMapQuest];
+	var map_layers = [tileOSM];
 	map_layers.push(coin_clusters[coins[0]]); // enable just first coin
 
 	var map = L.map('map', {
@@ -59,10 +60,10 @@ function coinmap() {
 
 	var layers = L.control.layers({
 		"OpenStreetMap": tileOSM,
-		"MapQuestOpen": tileMapQuest,
-		"MapQuestOpenAerial": tileMapQuestAerial,
-		"Toner": tileToner,
-		"Watercolor": tileWatercolor,
+		// "MapQuestOpen": tileMapQuest,
+		// "MapQuestOpenAerial": tileMapQuestAerial,
+		// "Toner": tileToner,
+		// "Watercolor": tileWatercolor,
 		"Google Roadmap": tileGoogleRoadmap,
 		"Google Satellite": tileGoogleSatellite,
 		"Google Hybrid": tileGoogleHybrid,

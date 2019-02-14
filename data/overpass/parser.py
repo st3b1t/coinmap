@@ -191,9 +191,18 @@ def determine_icon(tags, coin = 'bitcoin'):
 	icon = icon.replace('-', '_')
 	return icon
 
+# proxies = {
+#     'http': 'http://localhost:3128',
+#     'https': 'http://localhost:3128',
+# }
+
+# # Create the session and set the proxies.
+# s = requests.Session()
+# s.proxies = proxies
+
 def get_points(coin = 'bitcoin', iso = 'XBT'):
 	points = []
-	resp = requests.get('http://overpass.osm.rambler.ru/cgi/interpreter?data=[out:json];(node["payment:%s"=yes];>;way["payment:%s"=yes];>;relation["payment:%s"=yes];>;node["currency:%s"=yes];>;way["currency:%s"=yes];>;relation["currency:%s"=yes];);out;' % (coin, coin, coin, iso, iso, iso)).json()
+	resp = requests.get('http://overpass-api.de/api/interpreter?data=[out:json];(node["payment:%s"=yes];>;way["payment:%s"=yes];>;relation["payment:%s"=yes];>;node["currency:%s"=yes];>;way["currency:%s"=yes];>;relation["currency:%s"=yes];);out;' % (coin, coin, coin, iso, iso, iso)).json()
 	print len(resp['elements'])
 	for e in resp['elements']:
 		lat = e.get('lat', None)
