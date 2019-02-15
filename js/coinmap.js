@@ -7,14 +7,6 @@ function coinmap() {
 		maxZoom: 18
 	});
 
-	var tileGoogleRoadmap = new L.Google('ROADMAP');
-
-	var tileGoogleSatellite = new L.Google('SATELLITE');
-
-	var tileGoogleHybrid = new L.Google('HYBRID');
-
-	var tileGoogleTerrain = new L.Google('TERRAIN');
-
 	var coin_clusters = {};
 	var coins = ["Bitcoin"];
 	for (var i = 0; i < coins.length; i++) {
@@ -37,11 +29,7 @@ function coinmap() {
 	});
 
 	var layers = L.control.layers({
-		"OpenStreetMap": tileOSM,
-		"Google Roadmap": tileGoogleRoadmap,
-		"Google Satellite": tileGoogleSatellite,
-		"Google Hybrid": tileGoogleHybrid,
-		"Google Terrain": tileGoogleTerrain,
+		"OpenStreetMap": tileOSM
 	}, coin_clusters, {
 		collapsed: false
 	}).addTo(map);
