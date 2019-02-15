@@ -3,9 +3,73 @@ var knownLanguages = ["cz","de","en","it","jp","pt_br","ru","sk"];
 function coinmap() {
 
 	var tileOSM = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: 'Data &copy; by <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.',
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		maxZoom: 18
 	});
+
+    var tileOSMBlackAndWhite = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    });
+
+    var tileOpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+    });
+
+    var tileStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: 'abcd',
+        minZoom: 1,
+        maxZoom: 18,
+        ext: 'jpg'
+    });
+
+    var tileTF = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        apikey: 'b1aae45961fd48eeaf90a28684e31929',
+        maxZoom: 18
+    });
+
+    var tileTFSpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        apikey: 'b1aae45961fd48eeaf90a28684e31929',
+        maxZoom: 18
+    });
+
+    var tileTFOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey={apikey}', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        apikey: 'b1aae45961fd48eeaf90a28684e31929',
+        maxZoom: 18
+    });
+
+    var tileTFPioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
+        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        apikey: 'b1aae45961fd48eeaf90a28684e31929',
+        maxZoom: 18
+    });
+
+    var tileOpenMapSurferRoads = L.tileLayer('https://maps.heigit.org/openmapsurfer/tiles/roads/webmercator/{z}/{x}/{y}.png', {
+        attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+    });
+
+    var tileCartoLight = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+        maxZoom: 18
+    });
+
+    var tileCartoDark = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+        attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.',
+        maxZoom: 18
+    });
+
+    var tileHyddaFull = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+        attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 18
+    });
+
+    // More tiles here: http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 
 	var coin_clusters = {};
 	var coins = ["Bitcoin"];
@@ -29,7 +93,18 @@ function coinmap() {
 	});
 
 	var layers = L.control.layers({
-		"OpenStreetMap": tileOSM
+		"OpenStreetMap": tileOSM,
+        "OSM Black & White": tileOSMBlackAndWhite,
+        "OpenTopoMap": tileOpenTopoMap,
+        "Stamen Water Color": tileStamenWatercolor,
+        "Thunderforest Landscape": tileTF,
+        "Thunderforest Spinal Map": tileTFSpinalMap,
+        "Thunderforest Outdoors": tileTFOutdoors,
+        "Thunderforest Pioneer": tileTFPioneer,
+        "OpenMapSurfer Roads": tileOpenMapSurferRoads,
+        "Carto Light": tileCartoLight,
+        "Carto Dark": tileCartoDark,
+        "Hydda Full": tileHyddaFull
 	}, coin_clusters, {
 		collapsed: false
 	}).addTo(map);
