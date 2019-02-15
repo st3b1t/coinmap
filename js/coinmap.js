@@ -2,7 +2,7 @@ var knownLanguages = ["cz","de","en","it","jp","pt_br","ru","sk"];
 
 function coinmap() {
 
-	var tileOSM = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		maxZoom: 18
 	});
@@ -37,7 +37,7 @@ function coinmap() {
         maxZoom: 18
     });
 
-	var tileTF = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+	var tileTF = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
 		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		apikey: 'b1aae45961fd48eeaf90a28684e31929',
 		maxZoom: 18
