@@ -61,6 +61,14 @@ function coinmap() {
 		maxZoom: 18
 	});
 
+    var tileStamenToner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
+        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
+    });
+
 	var tileStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
 		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		subdomains: 'abcd',
@@ -94,11 +102,8 @@ function coinmap() {
         "Carto Light": tileCartoLight,
         "Carto Dark": tileCartoDark,
         "Hydda Full": tileHyddaFull,
-		"Thunderforest Landscape": tileTF,
-		"Thunderforest Spinal Map": tileTFSpinalMap,
-		"Thunderforest Outdoors": tileTFOutdoors,
-		"Thunderforest Pioneer": tileTFPioneer,
-		"Stamen Water Color": tileStamenWatercolor
+        "Stamen Toner": tileStamenToner,
+        "Stamen Water Color": tileStamenWatercolor
 	}, null, {
 		collapsed: false
 	}).addTo(map);
