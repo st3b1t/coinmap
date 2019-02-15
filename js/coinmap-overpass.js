@@ -1,6 +1,5 @@
-function coinmap_populate_overpass(cluster, coin) {
-	coin = coin.toLowerCase();
-	$.getJSON('data/data-overpass-' + coin + '.json', function(data) {
+function coinmap_populate_overpass(cluster) {
+	$.getJSON('data/data-overpass-bitcoin.json', function(data) {
 		$.each(data, function(key, val) {
 			var lat = val['lat'];
 			var lon = val['lon'];
@@ -36,6 +35,6 @@ function coinmap_populate_overpass(cluster, coin) {
 			icon = window.coinmap_icons[icon];
 			L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(cluster);
 		});
-		document.getElementById(coin + "_count").innerHTML = data.length;
+		document.getElementById("bitcoin_count").innerHTML = data.length;
 	});
 }

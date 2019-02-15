@@ -17,38 +17,6 @@ function coinmap() {
         attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
     });
 
-    var tileStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-        attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains: 'abcd',
-        minZoom: 1,
-        maxZoom: 18,
-        ext: 'jpg'
-    });
-
-    var tileTF = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
-        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        apikey: 'b1aae45961fd48eeaf90a28684e31929',
-        maxZoom: 18
-    });
-
-    var tileTFSpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
-        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        apikey: 'b1aae45961fd48eeaf90a28684e31929',
-        maxZoom: 18
-    });
-
-    var tileTFOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey={apikey}', {
-        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        apikey: 'b1aae45961fd48eeaf90a28684e31929',
-        maxZoom: 18
-    });
-
-    var tileTFPioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
-        attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        apikey: 'b1aae45961fd48eeaf90a28684e31929',
-        maxZoom: 18
-    });
-
     var tileOpenMapSurferRoads = L.tileLayer('https://maps.heigit.org/openmapsurfer/tiles/roads/webmercator/{z}/{x}/{y}.png', {
         attribution: 'Imagery from <a href="http://giscience.uni-hd.de/">GIScience Research Group @ University of Heidelberg</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 18
@@ -69,21 +37,47 @@ function coinmap() {
         maxZoom: 18
     });
 
+	var tileTF = L.tileLayer('http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
+		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		apikey: 'b1aae45961fd48eeaf90a28684e31929',
+		maxZoom: 18
+	});
+
+	var tileTFSpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
+		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		apikey: 'b1aae45961fd48eeaf90a28684e31929',
+		maxZoom: 18
+	});
+
+	var tileTFOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey={apikey}', {
+		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		apikey: 'b1aae45961fd48eeaf90a28684e31929',
+		maxZoom: 18
+	});
+
+	var tileTFPioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
+		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		apikey: 'b1aae45961fd48eeaf90a28684e31929',
+		maxZoom: 18
+	});
+
+	var tileStamenWatercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+		attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+		subdomains: 'abcd',
+		minZoom: 1,
+		maxZoom: 18,
+		ext: 'jpg'
+	});
     // More tiles here: http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 
-	var coin_clusters = {};
-	var coins = ["Bitcoin"];
-	for (var i = 0; i < coins.length; i++) {
-		coin_clusters[coins[i]] = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
-	}
+	var bitcoin_cluster = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
 
 	window.total_count = 0;
-	for (var i = 0; i < coins.length; i++) {
-		coinmap_populate_overpass(coin_clusters[coins[i]], coins[i]);
-	}
+	coinmap_populate_overpass(bitcoin_cluster);
+
 	// var map_layers = [tileMapQuest];
 	var map_layers = [tileOSM];
-	map_layers.push(coin_clusters[coins[0]]); // enable just first coin
+	map_layers.push(bitcoin_cluster);
 
 	var map = L.map('map', {
 		center: [0, 0],
@@ -96,16 +90,16 @@ function coinmap() {
 		"OpenStreetMap": tileOSM,
         "OSM Black & White": tileOSMBlackAndWhite,
         "OpenTopoMap": tileOpenTopoMap,
-        "Stamen Water Color": tileStamenWatercolor,
-        "Thunderforest Landscape": tileTF,
-        "Thunderforest Spinal Map": tileTFSpinalMap,
-        "Thunderforest Outdoors": tileTFOutdoors,
-        "Thunderforest Pioneer": tileTFPioneer,
         "OpenMapSurfer Roads": tileOpenMapSurferRoads,
         "Carto Light": tileCartoLight,
         "Carto Dark": tileCartoDark,
-        "Hydda Full": tileHyddaFull
-	}, coin_clusters, {
+        "Hydda Full": tileHyddaFull,
+		"Thunderforest Landscape": tileTF,
+		"Thunderforest Spinal Map": tileTFSpinalMap,
+		"Thunderforest Outdoors": tileTFOutdoors,
+		"Thunderforest Pioneer": tileTFPioneer,
+		"Stamen Water Color": tileStamenWatercolor
+	}, null, {
 		collapsed: false
 	}).addTo(map);
 
@@ -122,41 +116,40 @@ function coinmap() {
 		// I have no experience with leaflet, so maybe this is too "hacked" on
 		var inBounds = [];
 		var bounds = map.getBounds();
-		coins.forEach(function (coinName) {
-			coinLayer = coin_clusters[coinName];
-			if (!map.hasLayer(coinLayer)) {
-				return;
+
+		if (!map.hasLayer(bitcoin_cluster)) {
+			return;
+		}
+		bitcoin_cluster.eachLayer(function(layer) {
+			if (bounds.contains(layer.getLatLng())) {
+					right_html = '<div class="placename">' + layer.options.title + '</div>';
+					var newdiv = $(right_html);
+					$(newdiv).click(function() {
+						// this is needed to get over clusters
+						var visible = bitcoin_cluster.getVisibleParent(layer);
+						visible.bindPopup(layer.getPopup()).openPopup();
+					});
+					// title for sorting
+					inBounds.push({div:newdiv,title:layer.options.title});
 			}
-			coinLayer.eachLayer(function(layer) {
-				if (bounds.contains(layer.getLatLng())) {
-						right_html = '<div class="placename">' + layer.options.title + '</div>';
-						var newdiv = $(right_html);
-						$(newdiv).click(function() {
-							// this is needed to get over clusters
-							var visible = coinLayer.getVisibleParent(layer);
-							visible.bindPopup(layer.getPopup()).openPopup();
-						});
-						// title for sorting
-						inBounds.push({div:newdiv,title:layer.options.title});
-				}
-			});
-			var marker_html;
-			inBounds.sort(function(a,b){
-				// no idea what will it do with chinese/arabic, but should work
-				return a.title.localeCompare(b.title);
-			});
-			// these are not yet translated
-			if (inBounds.length==0) {
-				marker_html="<span data-l10n='no-visible'>No venues visible.</span>";
-			} else {
-				marker_html="<div class='on-map-top'> <span data-l10n='on-the-map'>Currently visible ("+inBounds.length+")</span></div><div class='leaflet-control-layers-separator'></div>";
-			}
-			document.getElementById('marker-list').innerHTML = marker_html;
-			inBounds.forEach(function(object){
-				$('#marker-list').append(object.div);
-			});
-			$('#marker-above').show();
 		});
+		var marker_html;
+		inBounds.sort(function(a,b){
+			// no idea what will it do with chinese/arabic, but should work
+			return a.title.localeCompare(b.title);
+		});
+		// these are not yet translated
+		if (inBounds.length==0) {
+			marker_html="<span data-l10n='no-visible'>No venues visible.</span>";
+		} else {
+			marker_html="<div class='on-map-top'> <span data-l10n='on-the-map'>Currently visible ("+inBounds.length+")</span></div><div class='leaflet-control-layers-separator'></div>";
+		}
+		document.getElementById('marker-list').innerHTML = marker_html;
+		inBounds.forEach(function(object){
+			$('#marker-list').append(object.div);
+		});
+		$('#marker-above').show();
+
 	};
 	map.on('moveend', redrawVenues);
 	map.on('overlayremove', redrawVenues);
