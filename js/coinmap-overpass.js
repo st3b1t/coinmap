@@ -36,5 +36,8 @@ function coinmap_populate_overpass(cluster) {
 			L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(cluster);
 		});
 		document.getElementById("bitcoin_count").innerHTML = data.length;
+
+		$('#loading').css('visibility','hidden');
+		$('#container').css('visibility','visible');
 	});
 }
