@@ -10,7 +10,7 @@ This is a fork of the former CoinMap. Here is what's the difference with CoinMap
 | CoinMap                                          | CoinMap 2.0                                      |
 | -------------------------------------------------| -------------------------------------------------|
 | Two-way sync with OpenStreetMap data             | One-way sync with OpenStreetMap data             |
-| Venues must have a physical presence on ground   | Venues can even be any website selling anything  |
+| Venues must have a physical presence on ground   | Venues can even be any online shop or website    |
 | Different styles can be chosen for the map view  | Map view has one style (CartoDB light theme)     |
 | Map view not (yet) optimized for mobile devices* | Map view optimized for mobile devices            |
 
