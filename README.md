@@ -14,9 +14,11 @@ This is a fork of the former CoinMap. Here is what's the difference with CoinMap
 | Different styles can be chosen for the map view  | Map view has one style (CartoDB light theme)     |
 | Map view not (yet) optimized for mobile devices* | Map view optimized for mobile devices            |
 
-&ast; Contributors are welcome
+<small>&ast; Contributors are welcome</small>
 
-Bitcoin donations welcome at 1ML2oGwA14DLV5JwAYAGPS8X132vHhYUFi
+BitcoinTalk forum thread: https://bitcointalk.org/index.php?topic=5111963.
+
+Bitcoin donations welcome at 1ML2oGwA14DLV5JwAYAGPS8X132vHhYUFi.
 
 * Licensed under [Affero General Public License 3](http://www.gnu.org/licenses/agpl-3.0.html)
 * Map Data © by [OpenStreetMap contributors](http://www.openstreetmap.org/copyright)
