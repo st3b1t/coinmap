@@ -1,5 +1,5 @@
-function coinmap_populate_overpass(clusters) {
-	$.getJSON('data/data-overpass-bitcoin.json', function(data) {
+async function coinmap_populate_overpass(clusters) {
+	return $.getJSON('data/data-overpass-bitcoin.json', function(data) {
 		$.each(data, function(key, val) {
 			var lat = val['lat'];
 			var lon = val['lon'];
@@ -42,8 +42,5 @@ function coinmap_populate_overpass(clusters) {
 			L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['All']);
 		});
 		document.getElementById("bitcoin_count").innerHTML = data.length;
-
-		$('#loading').css('visibility','hidden');
-		$('#container').css('visibility','visible');
 	});
 }

@@ -1,6 +1,6 @@
 var knownLanguages = ["cz","de","en","it","jp","pt_br","ru","sk"];
 
-function coinmap() {
+async function coinmap() {
 
 	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -85,7 +85,11 @@ function coinmap() {
 	}
 
 	window.total_count = 0;
-	coinmap_populate_overpass(clusters);
+
+	await coinmap_populate_overpass(clusters);
+
+	$('#loading').hide();
+	$('#container').show();
 
 	var map_layers = [tileOSM];
 	map_layers.push(clusters[cluster_types[0]]); // enable just first coin
@@ -121,7 +125,7 @@ function coinmap() {
 		    "Hydda Full": tileHyddaFull,
 		    "Stamen Toner": tileStamenToner,
 		    "Stamen Water Color": tileStamenWatercolor
-		}, { "Show:": clusters }, { collapsed: false, exclusiveGroups: ["Show:"] }).addTo(map);
+		}, { "Show:": clusters }, { collapsed: false, exclusiveGroups: ["Show:"] }).addTo(map)
 
 	map.on('moveend', function(e){
 		if(map.getZoom() >= 13){

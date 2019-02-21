@@ -22,7 +22,7 @@ body {
 }
 
 #container {
-  visibility: hidden;
+  display: none;
 }
 
 #map {
@@ -132,12 +132,13 @@ a {
   position: absolute;
   z-index: 1000;
   pointer-events: none;
+  bottom: 0;
 }
 
 #marker-list{
-  top:280px;
+  /*top:280px;*/
   width: 200px;
-  max-height: 300px;
+  max-height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
 }
