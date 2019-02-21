@@ -1,4 +1,4 @@
-function coinmap_populate_overpass(cluster) {
+function coinmap_populate_overpass(clusters) {
 	$.getJSON('data/data-overpass-bitcoin.json', function(data) {
 		$.each(data, function(key, val) {
 			var lat = val['lat'];
@@ -33,7 +33,13 @@ function coinmap_populate_overpass(cluster) {
 				icon += '.p';
 			}
 			icon = window.coinmap_icons[icon];
-			L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(cluster);
+
+			if (val['icon'] === "money_atm") {
+				L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['ATMs']);
+			} else {
+				L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['Venues']);
+			}
+			L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['All']);
 		});
 		document.getElementById("bitcoin_count").innerHTML = data.length;
 

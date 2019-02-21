@@ -78,14 +78,17 @@ function coinmap() {
 	});
     // More tiles here: http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 
-	var bitcoin_cluster = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
+	var clusters = {};
+	var cluster_types = ["All", "Venues", "ATMs"];
+	for (var i = 0; i < cluster_types.length; i++) {
+		clusters[cluster_types[i]] = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
+	}
 
 	window.total_count = 0;
-	coinmap_populate_overpass(bitcoin_cluster);
+	coinmap_populate_overpass(clusters);
 
-	// var map_layers = [tileMapQuest];
 	var map_layers = [tileOSM];
-	map_layers.push(bitcoin_cluster);
+	map_layers.push(clusters[cluster_types[0]]); // enable just first coin
 
 	var map = L.map('map', {
 		center: [0, 0],
@@ -94,19 +97,31 @@ function coinmap() {
 		worldCopyJump: true
 	});
 
-	var layers = L.control.layers({
-		"OpenStreetMap": tileOSM,
-        "OSM Black & White": tileOSMBlackAndWhite,
-        "OpenTopoMap": tileOpenTopoMap,
-        "OpenMapSurfer Roads": tileOpenMapSurferRoads,
-        "Carto Light": tileCartoLight,
-        "Carto Dark": tileCartoDark,
-        "Hydda Full": tileHyddaFull,
-        "Stamen Toner": tileStamenToner,
-        "Stamen Water Color": tileStamenWatercolor
-	}, null, {
-		collapsed: false
-	}).addTo(map);
+	// var layers = L.control.layers({
+	// 	"OpenStreetMap": tileOSM,
+    //     "OSM Black & White": tileOSMBlackAndWhite,
+    //     "OpenTopoMap": tileOpenTopoMap,
+    //     "OpenMapSurfer Roads": tileOpenMapSurferRoads,
+    //     "Carto Light": tileCartoLight,
+    //     "Carto Dark": tileCartoDark,
+    //     "Hydda Full": tileHyddaFull,
+    //     "Stamen Toner": tileStamenToner,
+    //     "Stamen Water Color": tileStamenWatercolor
+	// }, null, {
+	// 	collapsed: false
+	// }).addTo(map);
+
+	L.control.groupedLayers({
+			"OpenStreetMap": tileOSM,
+		    "OSM Black & White": tileOSMBlackAndWhite,
+		    "OpenTopoMap": tileOpenTopoMap,
+		    "OpenMapSurfer Roads": tileOpenMapSurferRoads,
+		    "Carto Light": tileCartoLight,
+		    "Carto Dark": tileCartoDark,
+		    "Hydda Full": tileHyddaFull,
+		    "Stamen Toner": tileStamenToner,
+		    "Stamen Water Color": tileStamenWatercolor
+		}, { "Show:": clusters }, { collapsed: false, exclusiveGroups: ["Show:"] }).addTo(map);
 
 	map.on('moveend', function(e){
 		if(map.getZoom() >= 13){
@@ -121,40 +136,41 @@ function coinmap() {
 		// I have no experience with leaflet, so maybe this is too "hacked" on
 		var inBounds = [];
 		var bounds = map.getBounds();
-
-		if (!map.hasLayer(bitcoin_cluster)) {
-			return;
-		}
-		bitcoin_cluster.eachLayer(function(layer) {
-			if (bounds.contains(layer.getLatLng())) {
+		cluster_types.forEach(function (coinName) {
+			coinLayer = clusters[coinName];
+			if (!map.hasLayer(coinLayer)) {
+				return;
+			}
+			coinLayer.eachLayer(function(layer) {
+				if (bounds.contains(layer.getLatLng())) {
 					right_html = '<div class="placename">' + layer.options.title + '</div>';
 					var newdiv = $(right_html);
 					$(newdiv).click(function() {
 						// this is needed to get over clusters
-						var visible = bitcoin_cluster.getVisibleParent(layer);
+						var visible = coinLayer.getVisibleParent(layer);
 						visible.bindPopup(layer.getPopup()).openPopup();
 					});
 					// title for sorting
 					inBounds.push({div:newdiv,title:layer.options.title});
+				}
+			});
+			var marker_html;
+			inBounds.sort(function(a,b){
+				// no idea what will it do with chinese/arabic, but should work
+				return a.title.localeCompare(b.title);
+			});
+			// these are not yet translated
+			if (inBounds.length==0) {
+				marker_html="<span data-l10n='no-visible'>No venues visible.</span>";
+			} else {
+				marker_html="<div class='on-map-top'> <span data-l10n='on-the-map'>Currently visible ("+inBounds.length+")</span></div><div class='leaflet-control-layers-separator'></div>";
 			}
+			document.getElementById('marker-list').innerHTML = marker_html;
+			inBounds.forEach(function(object){
+				$('#marker-list').append(object.div);
+			});
+			$('#marker-above').show();
 		});
-		var marker_html;
-		inBounds.sort(function(a,b){
-			// no idea what will it do with chinese/arabic, but should work
-			return a.title.localeCompare(b.title);
-		});
-		// these are not yet translated
-		if (inBounds.length==0) {
-			marker_html="<span data-l10n='no-visible'>No venues visible.</span>";
-		} else {
-			marker_html="<div class='on-map-top'> <span data-l10n='on-the-map'>Currently visible ("+inBounds.length+")</span></div><div class='leaflet-control-layers-separator'></div>";
-		}
-		document.getElementById('marker-list').innerHTML = marker_html;
-		inBounds.forEach(function(object){
-			$('#marker-list').append(object.div);
-		});
-		$('#marker-above').show();
-
 	};
 	map.on('moveend', redrawVenues);
 	map.on('overlayremove', redrawVenues);
