@@ -21,7 +21,7 @@
 import os
 import json
 import json.encoder
-from overpass import parser as overpass_parser
+import parser as overpass_parser
 
 scriptdir = os.path.dirname(os.path.abspath(__file__))
 
