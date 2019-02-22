@@ -5,7 +5,7 @@ body {
 }
 
 #loading {
-  background-color: #5ec5e8;
+  background-color: #73dae1;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@ body {
 }
 
 #welcome {
-  color: #5e6d7c;
+  color: #fff;
   font-size: 2rem;
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -118,11 +118,10 @@ a {
   cursor: pointer;
 }
 
-/* hides footer and marker-list on small screen */
+/* hides language sidebar, footer and marker-list on small screen */
 @media (max-width: 780px) {
-  #footer {
-    display: none;
-  }
+  #lang,
+  #footer,
   #marker-list {
     display: none;
   }
