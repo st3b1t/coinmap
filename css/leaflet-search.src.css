@@ -91,7 +91,8 @@
 .leaflet-control-search .search-tooltip {
 	position:absolute;
 	top:100%;
-	left:0;
+	/*left:0;*/
+	right: 0; /* added by me */
 	float:left;
 	list-style: none;
 	padding-left: 0;

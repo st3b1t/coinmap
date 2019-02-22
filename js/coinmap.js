@@ -155,7 +155,11 @@ async function coinmap() {
 	map.on('overlayremove', redrawVenues);
 	map.on('overlayadd', redrawVenues);
 
-	map.locate({setView: true, maxZoom: 12});
+	var lc = L.control.locate({
+		strings: {
+			title: "Show me where I am!"
+		}
+	}).addTo(map);
 
 	map.addControl(new L.Control.Search({
 		url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
@@ -165,7 +169,8 @@ async function coinmap() {
 		autoType: false,
 		autoCollapse: true,
 		minLength: 2,
-		zoom: 13
+		zoom: 13,
+		position: 'topright'
 	}) );
 
 	var hash = new L.Hash(map);
