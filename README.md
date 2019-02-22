@@ -11,10 +11,8 @@ This is a fork of the former CoinMap. Here is what's the difference with CoinMap
 | -------------------------------------------------| -------------------------------------------------|
 | Two-way sync with OpenStreetMap data             | One-way sync with OpenStreetMap data             |
 | Venues must have a physical presence on ground   | Venues can even be any online shop or website    |
+| Markers viewing filter: venues or ATMs or both   | Venues, ATMs and online shops all toghether      |
 | Different styles can be chosen for the map view  | Map view has one style (CartoDB light theme)     |
-| Map view not (yet) optimized for mobile devices* | Map view optimized for mobile devices            |
-
-<small>&ast; Contributors are welcome</small>
 
 BitcoinTalk forum thread: https://bitcointalk.org/index.php?topic=5111963.
 
