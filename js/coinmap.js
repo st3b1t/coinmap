@@ -1,7 +1,6 @@
 var knownLanguages = ["cz","de","en","it","jp","pt_br","ru","sk"];
 
 async function coinmap() {
-
 	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		maxZoom: 18
@@ -36,30 +35,6 @@ async function coinmap() {
         attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 18
     });
-
-	var tileTF = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey={apikey}', {
-		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		apikey: 'b1aae45961fd48eeaf90a28684e31929',
-		maxZoom: 18
-	});
-
-	var tileTFSpinalMap = L.tileLayer('https://{s}.tile.thunderforest.com/spinal-map/{z}/{x}/{y}.png?apikey={apikey}', {
-		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		apikey: 'b1aae45961fd48eeaf90a28684e31929',
-		maxZoom: 18
-	});
-
-	var tileTFOutdoors = L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey={apikey}', {
-		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		apikey: 'b1aae45961fd48eeaf90a28684e31929',
-		maxZoom: 18
-	});
-
-	var tileTFPioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}.png?apikey={apikey}', {
-		attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-		apikey: 'b1aae45961fd48eeaf90a28684e31929',
-		maxZoom: 18
-	});
 
     var tileStamenToner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -125,7 +100,7 @@ async function coinmap() {
 		    "Hydda Full": tileHyddaFull,
 		    "Stamen Toner": tileStamenToner,
 		    "Stamen Water Color": tileStamenWatercolor
-		}, { "Show:": clusters }, { collapsed: false, exclusiveGroups: ["Show:"] }).addTo(map)
+		}, { "Show:": clusters }, { collapsed: true, exclusiveGroups: ["Show:"] }).addTo(map)
 
 	map.on('moveend', function(e){
 		if(map.getZoom() >= 13){
