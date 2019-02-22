@@ -168,7 +168,7 @@ async function coinmap() {
 		zoom: 13
 	}) );
 
-	// map.addControl(new L.Control.Permalink({text: 'Permalink', layers: layers, position: "none", useLocation: true}));
+	var hash = new L.Hash(map);
 
 	// localization
 	var preferredLanguage = $.cookie('lang') || window.navigator.userLanguage || window.navigator.language;
