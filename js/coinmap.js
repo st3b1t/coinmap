@@ -161,8 +161,8 @@ async function coinmap() {
 		}
 	}).addTo(map);
 
-	map.addControl(new L.Control.Search({
-		url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
+	map.addControl( new L.Control.Search({
+		url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
 		jsonpParam: 'json_callback',
 		propertyName: 'display_name',
 		propertyLoc: ['lat','lon'],
