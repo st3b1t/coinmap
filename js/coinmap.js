@@ -162,15 +162,14 @@ async function coinmap() {
 	}).addTo(map);
 
 	map.addControl( new L.Control.Search({
-		url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
+		url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
 		jsonpParam: 'json_callback',
 		propertyName: 'display_name',
 		propertyLoc: ['lat','lon'],
 		autoType: false,
 		autoCollapse: true,
 		minLength: 2,
-		zoom: 13,
-		position: 'topright'
+		zoom: 13
 	}) );
 
 	var hash = new L.Hash(map);
