@@ -5,9 +5,9 @@ CoinMap
 
 Map showing places where you can use Bitcoin.
 
-This is a fork of the former CoinMap. Here is what's the difference with CoinMap 2.0 (https://coinmap.org):
+This is a fork of the former CoinMap. So this is the enhanced version of Coinmap 1.0 and below are the differences with CoinMap 2.0 (https://coinmap.org):
 
-| CoinMap                                          | CoinMap 2.0                                      |
+| CoinMap 1.0                                      | CoinMap 2.0                                      |
 | -------------------------------------------------| -------------------------------------------------|
 | Two-way sync with OpenStreetMap data             | One-way sync with OpenStreetMap data             |
 | Venues must have a physical presence on ground   | Venues can even be any online shop or website    |
