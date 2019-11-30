@@ -3,7 +3,7 @@
 	"please-on-ground": "Пожалуйста, не создавайте объекты, не являющиеся реальными местами на земле!",
 	"every-hour": "Данные объектов обновляются каждый час. Сейчас показано",
 	"places": "мест.",
-	"official-thread-source": "Официальный <a href='https://bitcointalk.org/index.php?topic=5111963'>тред на BitcoinTalk</a> | Исходный код доступен на <a href='https://github.com/smartm0use/coinmap' target='_blank'>GitHub</a>",
+	"official-thread-source": "Официальный <a href='https://bitcointalk.org/index.php?topic=5111963' target='_blank'>тред на BitcoinTalk</a> | Исходный код доступен на <a href='https://github.com/smartm0use/coinmap' target='_blank'>GitHub</a>",
 	"donations": "Пожертвования принимаются на адреса <a href='bitcoin:1ML2oGwA14DLV5JwAYAGPS8X132vHhYUFi'>1ML2oGwA14DLV5JwAYAGPS8X132vHhYUFi</a>.",
 	"close-": "Закрыть",
 	"about-project": "О проекте",
