@@ -1,5 +1,6 @@
 {
 	"how-to": "Чтобы добавить объект на карту, откройте <a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>редактор OpenStreetMap</a> и добавьте тег <strong>payment:bitcoin=yes</strong> к нему.",
+	"how-to-alt": "B кaчecтвe aльтepнaтивы мoжeтe ocтaвить зaявкy <a href='https://www.bitcoinaccepted.in' target='_blank'>здecь</a> и пoдoждaть, пoкa вaш oбъeкт нe дoбaвит ктo-нибyдь из cooбщecтвa OSM.",
 	"please-on-ground": "Пожалуйста, не создавайте объекты, не являющиеся реальными местами на земле!",
 	"every-hour": "Данные объектов обновляются каждый час. Сейчас показано",
 	"places": "мест.",
