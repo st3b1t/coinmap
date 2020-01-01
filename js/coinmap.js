@@ -1,4 +1,4 @@
-var knownLanguages = ["cz","de","en","it","jp","pt_br","ru","sk"];
+var knownLanguages = ["cz","de","en","it", "fr", "jp","pt_br","ru","sk"];
 
 async function coinmap() {
 	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -185,7 +185,7 @@ async function coinmap() {
 	else if(knownLanguages.indexOf(preferredLanguage.replace("-","_")) > -1){
 		localizeAll(preferredLanguage.replace("-","_"));
 	}
-	
+
 	$.each(knownLanguages, function(i, lang){
 		$('#' + lang).click(function() { $.cookie('lang', lang, { expires: 365 }); localizeAll(lang); });
 	});
