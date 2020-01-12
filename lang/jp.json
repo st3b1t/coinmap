@@ -1,5 +1,6 @@
 {
 	"how-to": "新しいビットコインを利用出来る店を登録するために <a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> のサイトで登録して <strong>payment:bitcoin=yes</strong> のタグを付けることです.",
+	"how-to-alt": "または、<a href='https://www.bitcoinaccepted.in' target='_blank'>ここに</a>メモを送信して、OSMの寄稿者が追加してくれることを期待できます.",
 	"please-on-ground": "<a href='http://ja.wikipedia.org/wiki/ブリック・アンド・モルタル'>店舗販売</a>のみの登録をお願いします。インターネットか配達のみの場所を登録しないで下さい",
 	"every-day": "毎日、新しい店舗をアップデートします. 現在は",
 	"places": "の場所があります.",

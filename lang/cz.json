@@ -1,5 +1,6 @@
 {
 	"how-to": "Chcete-li zapsat nové místo, tak přejděte na <a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> a otagujte místo <strong>payment:bitcoin=yes</strong>.",
+	"how-to-alt": "Případně <a href='https://www.bitcoinaccepted.in' target='_blank'>zde</a> můžete vložit poznámku a doufat, že ji přidal nějaký přispěvatel OSM.</strong>.",
 	"please-on-ground": "Prosíme zadávejte pouze kamenné obchody, kde se dá takto platit.",
 	"every-day": "Místa s možnými platbami se aktualizují každý den. Aktuálně je zde ",
 	"places": "míst na mapě.",
