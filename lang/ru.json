@@ -1,7 +1,7 @@
 {
-	"how-to": "Чтобы добавить объект на карту, откройте <a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>редактор OpenStreetMap</a> и добавьте тег <strong>payment:bitcoin=yes</strong> к нему.",
+	"how-to": "Чтобы добавить объект на карту, откройте <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>редактор OpenStreetMap</a> и добавьте тег <strong>payment:bitcoin=yes</strong> к нему.",
 	"how-to-alt": "B кaчecтвe aльтepнaтивы мoжeтe ocтaвить зaявкy <a href='https://www.bitcoinaccepted.in' target='_blank'>здecь</a> и пoдoждaть, пoкa вaш oбъeкт нe дoбaвит ктo-нибyдь из cooбщecтвa OSM.",
-	"please-on-ground": "Пожалуйста, не создавайте объекты, не являющиеся реальными местами на земле!",
+	"please-on-ground": "Пожалуйста, не создавайте объекты, не являющиеся <a href='https://en.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>реальными местами</a> на земле.",
 	"every-day": "Данные объектов обновляются каждый день. Сейчас показано",
 	"places": "мест.",
 	"official-thread-source": "Официальный <a href='https://bitcointalk.org/index.php?topic=5111963' target='_blank'>тред на BitcoinTalk</a> | Исходный код доступен на <a href='https://github.com/smartm0use/coinmap' target='_blank'>GitHub</a>",

@@ -1,7 +1,7 @@
 {
-	"how-to": "Pour ajouter votre lieu sur la carte, utilisez l'<a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>éditeur OpenStreetMap</a> et ajoutez-y le tag <strong>payment:bitcoin=yes</strong>.",
+	"how-to": "Pour ajouter votre lieu sur la carte, utilisez l'<a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>éditeur OpenStreetMap</a> et ajoutez-y le tag <strong>payment:bitcoin=yes</strong>.",
 	"how-to-alt": "Alternativement, vous pouvez soumettre une note <a href='https://www.bitcoinaccepted.in' target='_blank'>ici</a> et espérer qu'un contributeur OSM l'ajoute pour vous.",
-	"please-on-ground": "Veuillez ajouter des magasins/services seulement si ils sont <a href='http://it.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>physiques</a> et possèdent une localité sur la carte!",
+	"please-on-ground": "Veuillez ajouter des magasins/services seulement si ils sont <a href='https://fr.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>physiques</a> et possèdent une localité sur la carte!",
 	"every-day": "Les données sont mises à jour chaque jour. Actuellement, il y a",
 	"places": "endroits sur la carte.",
 	"official-thread-source": "Le <a href='https://bitcointalk.org/index.php?topic=5111963' target='_blank'>thread</a> BitcoinTalk officiel | Code de source disponible sur <a href='https://github.com/smartm0use/coinmap' target='_blank'>GitHub</a>",

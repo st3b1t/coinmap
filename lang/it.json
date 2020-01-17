@@ -1,7 +1,7 @@
 {
-	"how-to": "Per inserire un esercizio, vai sull'<a id='osm_edit_link' href='http://www.openstreetmap.org/edit' target='_blank'>editor di OpenStreetMap</a> e aggiungigli il tag <strong>payment:bitcoin=yes</strong>.",
+	"how-to": "Per inserire un esercizio, vai sull'<a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>editor di OpenStreetMap</a> e aggiungigli il tag <strong>payment:bitcoin=yes</strong>.",
 	"how-to-alt": "In alternativa puoi inviare una nota <a href='https://www.bitcoinaccepted.in' target='_blank'>qui</a> e sperare che qualche contributor OSM l'aggiunga per te.",
-	"please-on-ground": "Si prega di non creare nuovi elementi a meno che non abbiano una <a href='http://it.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>presenza fisica</a> sul suolo!",
+	"please-on-ground": "Si prega di non creare nuovi elementi a meno che non abbiano una <a href='https://it.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>presenza fisica</a> sul suolo!",
 	"every-day": "I dati sono aggiornati ogni giorno. Al momento ci sono",
 	"places": "posti sulla mappa.",
 	"official-thread-source": "<a href='https://bitcointalk.org/index.php?topic=5111963' target='_blank'>Discussione</a> su BitcoinTalk | Codice sorgente disponibile su <a href='https://github.com/smartm0use/coinmap' target='_blank'>GitHub</a>",
