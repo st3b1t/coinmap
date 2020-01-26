@@ -64,6 +64,7 @@ body {
 }
 
 #btn_footer_open.opened {
+  cursor: pointer;
   display:none;
 }
 
@@ -87,7 +88,7 @@ a {
 
 #lang {
   left: 0px;
-  top: 170px;
+  top: 150px;
   width: 18px;
   color: #AAAAAA;
 }

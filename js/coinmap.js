@@ -1,4 +1,4 @@
-var knownLanguages = ["cz","de","en","it", "fr", "jp","pt_br","ru","sk"];
+var knownLanguages = ["cz","de","en","it", "es", "fr", "jp","pt_br","ru","sk"];
 
 async function coinmap() {
 	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
