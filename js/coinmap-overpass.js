@@ -1,40 +1,40 @@
 async function coinmap_populate_overpass(clusters) {
 	return $.getJSON('data/data-overpass-bitcoin.json', function(data) {
-		$.each(data, function(key, val) {
-			var lat = val['lat'];
-			var lon = val['lon'];
-			var title = val['title'];
-			var popup = '<b>' + val['title'] + '</b> <a href="http://openstreetmap.org/browse/' + val['type'] + '/' + val['id'] + '" target="_blank">*</a><hr/>';
-			if (val['addr']) {
-				popup += val['addr'] + '<br/>';
+		$.each(data, function(index, element) {
+			var lat = element['lat'];
+			var lon = element['lon'];
+			var title = element['title'];
+			var popup = '<b>' + element['title'] + '</b> <a href="http://openstreetmap.org/browse/' + element['type'] + '/' + element['id'] + '" target="_blank">*</a><hr/>';
+			if (element['addr']) {
+				popup += element['addr'] + '<br/>';
 			}
-			if (val['city']) {
-				popup += val['city'] + '<br/>';
+			if (element['city']) {
+				popup += element['city'] + '<br/>';
 			}
-			if (val['country']) {
-				popup += val['country'] + '<br/>';
+			if (element['country']) {
+				popup += element['country'] + '<br/>';
 			}
 			popup += '<hr/>';
-			if (val['web']) {
-				popup += '<span data-l10n="website-">website</span>: <a href="' + val['web'] + '" target="_blank">' + val['web'] + '</a><br/>';
+			if (element['web']) {
+				popup += '<span data-l10n="website-">website</span>: <a href="' + element['web'] + '" target="_blank">' + element['web'] + '</a><br/>';
 			}
-			if (val['email']) {
-				popup += '<span data-l10n="email">e-mail</span>: <a href="mailto:' + val['email'] + '" target="_blank">' + val['email'] + '</a><br/>';
+			if (element['email']) {
+				popup += '<span data-l10n="email">e-mail</span>: <a href="mailto:' + element['email'] + '" target="_blank">' + element['email'] + '</a><br/>';
 			}
-			if (val['phone']) {
-				popup += '<span data-l10n="phone-">phone</span>: ' + val['phone'] + '<br/>';
+			if (element['phone']) {
+				popup += '<span data-l10n="phone-">phone</span>: ' + element['phone'] + '<br/>';
 			}
-			if (val['desc']) {
-				popup += val['desc'] + '<br/>';
+			if (element['desc']) {
+				popup += element['desc'] + '<br/>';
 			}
-			var icon = val['icon'];
+			var icon = element['icon'];
 			var promoted = false;
 			if (promoted) {
 				icon += '.p';
 			}
 			icon = window.coinmap_icons[icon];
 
-			if (val['icon'] === "money_atm") {
+			if (element['icon'] === "money_atm") {
 				L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['ATMs']);
 			} else {
 				L.marker([lat, lon], {"title": title, "icon": icon}).bindPopup(popup).addTo(clusters['Venues']);
