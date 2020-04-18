@@ -1,195 +1,205 @@
 body {
-  border: 0px;
-  margin: 0px;
-  padding: 0px;
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
 #loading {
-  background-color: #73dae1;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background-color: #73dae1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #welcome {
-  color: #fff;
-  font-size: 2rem;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#loading-text {
+    padding-top: 0.5rem;
+    font-style: italic;
 }
 
 #container {
-  display: none;
+    display: none;
 }
 
 #map {
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 #logo {
-  right: 10px;
-  top: 10px;
-  position: absolute;
-  z-index: 7;
-  font-size: xx-large;
-  font-style: italic;
+    right: 10px;
+    top: 10px;
+    position: absolute;
+    z-index: 7;
+    font-size: xx-large;
+    font-style: italic;
 }
 
 #footer, #lang {
-  font-size: 13px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 5px #bbb;
-  padding: 0 5px;
-  z-index: 7;
-  line-height: 200%;
+    font-size: 13px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px #bbb;
+    padding: 0 5px;
+    z-index: 7;
+    line-height: 200%;
 }
 
 #footer {
-  color: #333;
-  left: 0px;
-  bottom: 0px;
+    color: #333;
+    left: 0;
+    bottom: 0;
 }
 
 #footer.closed {
-  display: none;
+    display: none;
 }
 
 #btn_footer_open.opened {
-  cursor: pointer;
-  display:none;
+    cursor: pointer;
+    display: none;
 }
 
 #btn_footer_open.opened {
-  color: #333;
-  left: 0px;
-  bottom: 0px;
-  font-size: 13px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 5px #bbb;
-  padding: 0 5px;
-  z-index: 7;
-  line-height: 200%;
-  display: block;
+    color: #333;
+    left: 0;
+    bottom: 0;
+    font-size: 13px;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 5px #bbb;
+    padding: 0 5px;
+    z-index: 7;
+    line-height: 200%;
+    display: block;
 }
 
 a {
-  color: #0078A8;
+    color: #0078A8;
 }
 
 #lang {
-  left: 0px;
-  top: 150px;
-  width: 18px;
-  color: #AAAAAA;
+    left: 0;
+    top: 150px;
+    width: 18px;
+    color: #AAAAAA;
 }
 
 #lang img {
 }
 
 #lang a {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #btn_footer_close {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 18px;
-  color: #404040;
-  text-shadow: 0 1px 0 #ffffff;
-  text-decoration: none;
-  float: right;
-  margin-left: 5px
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #404040;
+    text-shadow: 0 1px 0 #ffffff;
+    text-decoration: none;
+    float: right;
+    margin-left: 5px
 }
 
 #btn_footer_close:hover {
-  color: #000000;
-  text-decoration: none;
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    cursor: pointer;
 }
 
 /* hides language sidebar, footer and marker-list on small screen */
 @media (max-width: 780px) {
-  #lang,
-  #footer,
-  #marker-list {
-    display: none;
-  }
+    #lang,
+    #footer,
+    #marker-list {
+        display: none;
+    }
 }
 
 .leaflet-almost-top {
-  position: absolute;
-  z-index: 1000;
-  pointer-events: none;
-  bottom: 0;
-  margin-bottom: 1rem;
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    bottom: 0;
+    margin-bottom: 1rem;
 }
 
-#marker-list{
-  /*top:280px;*/
-  width: 200px;
-  max-height: 250px;
-  overflow-y: auto;
-  overflow-x: hidden;
+#marker-list {
+    /*top:280px;*/
+    width: 200px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-#marker-above{
-  display:none;
+#marker-above {
+    display: none;
 }
 
 .on-map-top {
-  font-weight:bold;
+    font-weight: bold;
 }
 
-.placename{
-  border-bottom: 1px rgb(230,230,230) solid;
-  cursor:pointer;
+.placename {
+    border-bottom: 1px rgb(230, 230, 230) solid;
+    cursor: pointer;
 }
 
 /* Loading spinner */
 .lds-ring {
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
 }
+
 .lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #fff;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #fff transparent transparent transparent;
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    margin: 6px;
+    border: 6px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
 }
+
 .lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
+    animation-delay: -0.45s;
 }
+
 .lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
+    animation-delay: -0.3s;
 }
+
 .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+    animation-delay: -0.15s;
 }
+
 @keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

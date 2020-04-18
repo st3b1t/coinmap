@@ -31,11 +31,6 @@ async function coinmap() {
         maxZoom: 18
     });
 
-    var tileHyddaFull = L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
-        attribution: 'Tiles courtesy of <a href="http://openstreetmap.se/" target="_blank">OpenStreetMap Sweden</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 18
-    });
-
     var tileStamenToner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
         attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         subdomains: 'abcd',
@@ -59,12 +54,12 @@ async function coinmap() {
 		clusters[cluster_types[i]] = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
 	}
 
-	window.total_count = 0;
-
 	await coinmap_populate_overpass(clusters);
 
-	$('#loading').hide();
-	$('#container').show();
+	// Workaroud to fix map showing only one tile after await function containing percentage calculation
+    setTimeout(() => {
+        map.invalidateSize();
+    });
 
 	var map_layers = [tileOSM];
 	map_layers.push(clusters[cluster_types[0]]); // enable just first coin
@@ -83,7 +78,6 @@ async function coinmap() {
     //     "OpenMapSurfer Roads": tileOpenMapSurferRoads,
     //     "Carto Light": tileCartoLight,
     //     "Carto Dark": tileCartoDark,
-    //     "Hydda Full": tileHyddaFull,
     //     "Stamen Toner": tileStamenToner,
     //     "Stamen Water Color": tileStamenWatercolor
 	// }, null, {
@@ -91,16 +85,15 @@ async function coinmap() {
 	// }).addTo(map);
 
 	L.control.groupedLayers({
-			"OpenStreetMap": tileOSM,
-		    "OSM Black & White": tileOSMBlackAndWhite,
-		    "OpenTopoMap": tileOpenTopoMap,
-		    "OpenMapSurfer Roads": tileOpenMapSurferRoads,
-		    "Carto Light": tileCartoLight,
-		    "Carto Dark": tileCartoDark,
-		    "Hydda Full": tileHyddaFull,
-		    "Stamen Toner": tileStamenToner,
-		    "Stamen Water Color": tileStamenWatercolor
-		}, { "Show:": clusters }, { collapsed: true, exclusiveGroups: ["Show:"] }).addTo(map)
+        "OpenStreetMap": tileOSM,
+        "OSM Black & White": tileOSMBlackAndWhite,
+        "OpenTopoMap": tileOpenTopoMap,
+        "OpenMapSurfer Roads": tileOpenMapSurferRoads,
+        "Carto Light": tileCartoLight,
+        "Carto Dark": tileCartoDark,
+        "Stamen Toner": tileStamenToner,
+        "Stamen Water Color": tileStamenWatercolor
+    }, { "Show:": clusters }, { collapsed: true, exclusiveGroups: ["Show:"] }).addTo(map)
 
 	map.on('moveend', function(e){
 		if(map.getZoom() >= 13){
