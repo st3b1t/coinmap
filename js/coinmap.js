@@ -1,6 +1,6 @@
 var knownLanguages = ["cz","de","en","it", "es", "fr", "jp","pt_br","ru","sk"];
 
-async function coinmap() {
+function coinmap() {
 	var tileOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		maxZoom: 18
@@ -54,12 +54,18 @@ async function coinmap() {
 		clusters[cluster_types[i]] = new L.MarkerClusterGroup({showCoverageOnHover: false, maxClusterRadius: 64});
 	}
 
-	await coinmap_populate_overpass(clusters);
+	coinmap_populate_overpass(clusters)
+        .then(data => {
+            document.getElementById("bitcoin_count").innerHTML = data.length;
 
-	// Workaroud to fix map showing only one tile after await function containing percentage calculation
-    setTimeout(() => {
-        map.invalidateSize();
-    });
+            // Workaroud to fix map showing only one tile after await function containing percentage calculation
+            setTimeout(() => {
+                map.invalidateSize();
+            });
+        })
+        .catch(error => {
+            alert('An error has occurred: ', error);
+        });
 
 	var map_layers = [tileOSM];
 	map_layers.push(clusters[cluster_types[0]]); // enable just first coin

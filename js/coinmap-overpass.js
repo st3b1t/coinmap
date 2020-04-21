@@ -1,4 +1,4 @@
-async function coinmap_populate_overpass(clusters) {
+function coinmap_populate_overpass(clusters) {
 	return $.getJSON('data/data-overpass-bitcoin.json', function(data) {
 	    let i = 0;
 		$.each(data, function(index, element) {
@@ -53,6 +53,5 @@ async function coinmap_populate_overpass(clusters) {
                 }
             });
 		});
-		document.getElementById("bitcoin_count").innerHTML = data.length;
 	});
 }
