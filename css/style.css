@@ -62,6 +62,7 @@ body {
     color: #333;
     left: 0;
     bottom: 0;
+    line-height: 175%;
 }
 
 #footer.closed {
@@ -93,7 +94,7 @@ a {
 
 #lang {
     left: 0;
-    top: 150px;
+    top: 200px;
     width: 18px;
     color: #AAAAAA;
 }
