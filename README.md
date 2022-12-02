@@ -16,8 +16,6 @@ This is a fork of the former CoinMap. So this is the enhanced version of Coinmap
 
 BitcoinTalk forum thread: https://bitcointalk.org/index.php?topic=5111963.
 
-Bitcoin donations welcome at 1ML2oGwA14DLV5JwAYAGPS8X132vHhYUFi.
-
 * Licensed under [Affero General Public License 3](http://www.gnu.org/licenses/agpl-3.0.html)
 * Map Data © by [OpenStreetMap contributors](http://www.openstreetmap.org/copyright)
 * Map Icons CC-0 by [Brian Quinion](http://www.sjjb.co.uk/mapicons/)
