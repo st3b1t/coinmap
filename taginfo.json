@@ -1,0 +1,39 @@
+{
+  "tags": [
+    {
+      "key": "name",
+      "description": "Name shown in popup map"
+    },
+    {
+      "key": "payment:bitcoin",
+      "description": "showing places where you can use Bitcoin."
+    },
+    {
+      "key": "addr:street",
+      "description": "street address of the merchant who accepts Bitcoin"
+    },
+    {
+      "key": "website",
+      "description": "website of the merchant who accepts Bitcoin"
+    },
+    {
+      "key": "contact:email",
+      "description": "email of the merchant who accepts Bitcoin"
+    },
+    {
+      "key": "contact:phone",
+      "description": "Phone number of the merchant who accepts Bitcoin"
+    }
+  ],
+  "data_format": 1,
+  "data_url": "https://raw.githubusercontent.com/smartm0use/coinmap/master/taginfo.json",
+  "project": {
+    "description": "Map showing places where you can use Bitcoin.",
+    "doc_url": "https://github.com/smartm0use/coinmap/blob/master/README.md",
+    "contact_name": "Smartm0use",
+    "contact_email": "",
+    "project_url": "https://coinmap.it/",
+    "icon_url": "https://coinmap.it/img/favicon.png",
+    "name": "CoinMap"
+  }
+}
