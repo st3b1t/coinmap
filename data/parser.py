@@ -18,6 +18,7 @@
 #
 
 import requests
+import json
 
 icon_mapping = {
 'aeroway:aerodrome': 'transport_airport',
@@ -200,16 +201,26 @@ def determine_icon(tags, coin = 'bitcoin'):
 # s = requests.Session()
 # s.proxies = proxies
 
-def get_points(coin = 'bitcoin', iso = 'XBT'):
+def get_points(coin = 'bitcoin', iso = 'XBT', meta = 'meta', limit = ''):
 	points = []
-	resp = requests.get('http://overpass-api.de/api/interpreter?data=[out:json];(node["payment:%s"=yes];>;way["payment:%s"=yes];>;relation["payment:%s"=yes];>;node["currency:%s"=yes];>;way["currency:%s"=yes];>;relation["currency:%s"=yes];);out;' % (coin, coin, coin, iso, iso, iso)).json()
-	print len(resp['elements'])
-	for e in resp['elements']:
+	resp = requests.get('http://overpass-api.de/api/interpreter?data=[out:json];(node["payment:%s"=yes];>;way["payment:%s"=yes];>;relation["payment:%s"=yes];>;node["currency:%s"=yes];>;way["currency:%s"=yes];>;relation["currency:%s"=yes];);out %s %s;' % (coin, coin, coin, iso, iso, iso, meta, limit)).json()
+
+	print(len(resp['elements']))
+
+	for index,e in enumerate(resp['elements']):
+
+		print(json.dumps(e, indent=4))
+
+		if type(limit) == int and index > limit:
+			return
+
 		lat = e.get('lat', None)
 		lon = e.get('lon', None)
 		typ = e['type']
 		tags = e.get('tags', {})
 		ide = e['id']
+		#exists if meta enabled
+		time = e.get('timestamp', None)
 
 		if typ == 'node':
 			nodes[ide] = (lat, lon)
@@ -240,7 +251,7 @@ def get_points(coin = 'bitcoin', iso = 'XBT'):
 			name = '%s %s' % (typ, ide)
 
 		icon = determine_icon(tags, coin)
-		point = {'lat': lat, 'lon': lon, 'title': name, 'id': ide, 'type': typ, 'icon': icon}
+		point = {'lat': lat, 'lon': lon, 'title': name, 'id': ide, 'type': typ, 'icon': icon, 'time': time}
 
 		if 'addr:street' in tags:
 			point['addr'] = '%s %s' % (tags.get('addr:street', ''), tags.get('addr:housenumber', ''))
