@@ -201,7 +201,7 @@ def determine_icon(tags, coin = 'bitcoin'):
 # s = requests.Session()
 # s.proxies = proxies
 
-def get_points(coin = 'bitcoin', iso = 'XBT', meta = 'meta', limit = ''):
+def get_points(coin = 'bitcoin', iso = 'XBT', meta = 'meta', limit = '', verbose = False):
 	points = []
 	resp = requests.get('http://overpass-api.de/api/interpreter?data=[out:json];(node["payment:%s"=yes];>;way["payment:%s"=yes];>;relation["payment:%s"=yes];>;node["currency:%s"=yes];>;way["currency:%s"=yes];>;relation["currency:%s"=yes];);out %s %s;' % (coin, coin, coin, iso, iso, iso, meta, limit)).json()
 
@@ -209,7 +209,8 @@ def get_points(coin = 'bitcoin', iso = 'XBT', meta = 'meta', limit = ''):
 
 	for index,e in enumerate(resp['elements']):
 
-		print(json.dumps(e, indent=4))
+		if verbose:
+			print(json.dumps(e, indent=4))
 
 		if type(limit) == int and index > limit:
 			return
