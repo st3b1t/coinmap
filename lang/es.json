@@ -1,5 +1,5 @@
 {
-	"how-to": "Para listar su local vaya al <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>editor OpenStreetMap</a> y añada la etiqueta <strong>payment:bitcoin=yes</strong> al mismo.",
+	"how-to": "Para listar su local vaya al <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>editor OpenStreetMap</a> y añada la etiqueta <strong>currency:XBT=yes</strong> al mismo.",
 	"how-to-alt": "Como alternativa, puede enviar una nota <a href='https://www.bitcoinaccepted.in' target='_blank'>aquí</a> y esperar que algún colaborador de OSM lo agregue por usted.",
 	"please-on-ground": "Por favor, no cree nuevas sedes a menos que éstas tengan <a href='https://en.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>presencia física</a> en tierra!",
 	"every-day": "Los datos se actualizan cada dia. Actualmente hay",

@@ -1,5 +1,5 @@
 {
-	"how-to": "Ak chcete pridať nové miesto, prejdite na <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> a pridajte tag <strong>payment:bitcoin=yes</strong>.",
+	"how-to": "Ak chcete pridať nové miesto, prejdite na <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> a pridajte tag <strong>currency:XBT=yes</strong>.",
 	"how-to-alt": "Prípadne <a href='https://www.bitcoinaccepted.in' target='_blank'>tu</a> môžete vložiť poznámku a dúfať, že ju niektorý prispievateľ OSM pridá.",
 	"please-on-ground": "Prosíme zadávajte iba <a href='https://en.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>kamenné obchody</a>, kde sa dá takto platiť.",
 	"every-day": "Miesta s možnými platbami sa aktualizujú každý deň. Momentálne je",

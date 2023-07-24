@@ -1,5 +1,5 @@
 {
-	"how-to": "Um einen Ort hinzuzufügen besuchen Sie <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'> OpenStreetMap Editor</a> und fügen Sie das Tag <strong>payment:bitcoin=yes</strong> hinzu.",
+	"how-to": "Um einen Ort hinzuzufügen besuchen Sie <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'> OpenStreetMap Editor</a> und fügen Sie das Tag <strong>currency:XBT=yes</strong> hinzu.",
 	"how-to-alt": "Alternativ können Sie <a href='https://www.bitcoinaccepted.in' target='_blank'>hier</a> einen Hinweis einreichen und bitten, dass ein OSM-Mitarbeiter diesen für Sie hinzufügt.",
 	"please-on-ground": "Bitte fügen Sie nur Geschäfte hinzu bei denen der Kunde die <a href='https://de.wikipedia.org/wiki/Brick_and_Mortar' target='_blank'>Geschäfts- oder Verkaufsräumen</a> besuchen kann.",
 	"every-day": "Die Daten werden täglich aktualisiert. Derzeit gibt es",

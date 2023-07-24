@@ -1,5 +1,5 @@
 {
-	"how-to": "Per inserire un esercizio, vai sull'<a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>editor di OpenStreetMap</a> e aggiungigli il tag <strong>payment:bitcoin=yes</strong>.",
+	"how-to": "Per inserire un esercizio, vai sull'<a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>editor di OpenStreetMap</a> e aggiungilo con il tag <strong>currency:XBT=yes</strong>.",
 	"how-to-alt": "In alternativa puoi inviare una nota <a href='https://www.bitcoinaccepted.in' target='_blank'>qui</a> e sperare che qualche contributor OSM l'aggiunga per te.",
 	"please-on-ground": "Si prega di non creare nuovi elementi a meno che non abbiano una <a href='https://it.wikipedia.org/wiki/Brick_and_mortar' target='_blank'>presenza fisica</a> sul suolo!",
 	"every-day": "I dati sono aggiornati ogni giorno. Al momento ci sono",

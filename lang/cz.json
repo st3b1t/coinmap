@@ -1,5 +1,5 @@
 {
-	"how-to": "Chcete-li zapsat nové místo, tak přejděte na <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> a otagujte místo <strong>payment:bitcoin=yes</strong>.",
+	"how-to": "Chcete-li zapsat nové místo, tak přejděte na <a id='osm_edit_link' href='https://www.openstreetmap.org/edit' target='_blank'>OpenStreetMap editor</a> a otagujte místo <strong>currency:XBT=yes</strong>.",
 	"how-to-alt": "Případně <a href='https://www.bitcoinaccepted.in' target='_blank'>zde</a> můžete vložit poznámku a doufat, že ji přidal nějaký přispěvatel OSM.</strong>.",
 	"please-on-ground": "Prosíme zadávejte pouze <a href='https://cs.wikipedia.org/wiki/Kamenn%C3%BD_obchod' target='_blank'>kamenné obchody</a>, kde se dá takto platit.",
 	"every-day": "Místa s možnými platbami se aktualizují každý den. Aktuálně je zde ",
