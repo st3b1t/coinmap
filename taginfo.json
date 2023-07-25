@@ -9,6 +9,10 @@
       "description": "showing places where you can use Bitcoin."
     },
     {
+      "key": "currency:XBT",
+      "description": "showing places where you can use Bitcoin."
+    },    
+    {
       "key": "addr:street",
       "description": "street address of the merchant who accepts Bitcoin"
     },
